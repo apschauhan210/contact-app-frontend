@@ -1,0 +1,42 @@
+<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
+    style="background-image:url('https://media.istockphoto.com/id/1311934969/photo/contact-us.jpg?s=612x612&w=0&k=20&c=_vmYyAX0aFi-sHH8eYS-tLLNfs1ZWXnNB8M7_KWwhgg=')">
+    <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+        <div class="text-white">
+            <div class="mb-8 flex flex-col items-center">
+                <!-- <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Glyph-Color-Logo.wine.svg" width="150" alt=""
+                    srcset="" /> -->
+                <h1 class="mb-2 text-2xl">Contact App</h1>
+                <span class="text-gray-300">Enter Your Details</span>
+            </div>
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="mb-4 text-lg">
+                    <input
+                        class="rounded-xl border-none bg-sky-100 bg-opacity-50 px-6 py-2  text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                        formControlName="email" type="email" name="email" placeholder="Email" />
+                </div>
+                <div class="mb-4 text-lg">
+                    <input
+                        class="rounded-xl border-none bg-sky-100 bg-opacity-50 px-6 py-2  text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                        formControlName="name" type="text" name="name" placeholder="Name" />
+                </div>
+                <div class="mb-4 text-lg">
+                    <input
+                        class="rounded-xl border-none bg-sky-100 bg-opacity-50 px-6 py-2  text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                        formControlName="phone" type="tel" name="phone" placeholder="Phone Number" />
+                </div>
+                <div class="mb-4 text-lg">
+                    <input
+                        class="rounded-xl border-none bg-sky-100 bg-opacity-50 px-6 py-2 text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                        formControlName="password" type="Password" name="name" placeholder="Password" />
+                </div>
+                <div class="mt-8 flex justify-center text-lg text-black">
+                    <button type="submit"
+                        class="rounded-xl bg-sky-200 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-sky-400">Sign Up</button>
+                </div>                
+                <div class="my-4 text-md text-center">
+                    <span>Already have an account? <a class="text-sky-500" routerLink="/signin">Sign In</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

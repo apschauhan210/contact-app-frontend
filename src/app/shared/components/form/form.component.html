@@ -1,0 +1,54 @@
+<!-- <div class="z-20 items-center min-h-screen">
+    Anuj
+</div> -->
+<section class="bg-gray-100">
+    <div class="py-4 flex items-center justify-center">
+        <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex justify-center mb-6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDb0nYhc-OpmI7RxKGz9K7pDWXMl_X8q-_vg&usqp=CAU"
+                    alt="Logo" class="w-36 h-36">
+            </div>
+            <h1 class="text-xl font-semibold text-center text-gray-500 mt-4 mb-4">
+                {{formType}} Contact
+            </h1>
+            <div *ngIf="showSpinner" class="absolute inset-0 flex justify-center items-center z-10">
+                <mat-spinner></mat-spinner>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-5">
+                    <label for="name" class="block mb-2 text-sm text-gray-600">Name</label>
+                    <input formControlName="name" type="text" id="name" name="name"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        placeholder="John Wick" required>
+                </div>
+                <div class="mb-5">
+                    <label for="email" class="block mb-2 text-sm text-gray-600">Email</label>
+                    <input formControlName="email" type="email" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        placeholder="john@continental.com" required>
+                    <!-- <a href="#" class="block text-right text-xs text-cyan-600 mt-2">¿Olvidaste tu contraseña?</a> -->
+                </div>
+                <div class="mb-5">
+                    <label for="phone" class="block mb-2 text-sm text-gray-600">Phone Number</label>
+                    <input formControlName="phone" type="tel" id="phone" name="phone"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        placeholder="7898231452" required>
+                </div>
+                <div class="mb-5">
+                    <label for="position" class="block mb-2 text-sm text-gray-600">Position</label>
+                    <input formControlName="position" type="text" id="position" name="position"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        placeholder="Software Developer" required>
+                </div>
+                <div class="mb-5">
+                    <label for="company" class="block mb-2 text-sm text-gray-600">Company</label>
+                    <input formControlName="company" type="text" id="company" name="company"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        placeholder="Chubb" required>
+                </div>
+                <button type="submit"
+                    class="w-32 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mt-4 mb-6">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>

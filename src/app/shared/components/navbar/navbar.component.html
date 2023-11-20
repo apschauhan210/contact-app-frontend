@@ -1,0 +1,64 @@
+<nav class="border-b">
+    <div class="container px-6 py-2 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+            <div>
+                <a routerLink="/"
+                    class="cursor-pointer text-xl text-gray-800 font-semiblod md:text-3xl hover:text-gray-700">
+                    Contact App
+                </a>
+            </div>
+            <div class="flex md:hidden">
+                <button type="button" aria-label="toggle menu"
+                    class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                        <path fill-rule="evenodd"
+                            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="items-center hidden md:flex">
+            <div class="flex flex-col mt-4 space-y-8 md:flex-row md:items-center md:mt-0 md:space-y-0 md:space-x-16">
+                <a href="#" class="block font-medium text-gray-700 hover:text-gray-900 hover:underline">
+                </a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-gray-900 hover:underline">
+                </a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-gray-900 hover:underline"></a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-gray-900 hover:underline"></a>
+                <button routerLink="/signin" *ngIf="!signedUser"
+                    class="flex items-center px-5 py-3 font-medium tracking-wide text-center text-white capitalize bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-500">
+                    Sign In
+                </button>
+                <div *ngIf="signedUser" class="flex items-center justify-center">
+                    <div class="relative group">
+                        <button (click)="toggleDropdown()"
+                            class="inline-flex justify-center w-full px-2 py-1 text-sm font-medium text-gray-700 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-300">
+                            <span class="text-lg">{{signedUser.name}}<i class="px-2 fa-solid fa-angle-down"></i></span>
+                        </button>
+                        <div *ngIf="isOpen"
+                            class="z-50 absolute w-40 right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1">
+                            <!-- <input id="search-input"
+                                class="block w-full px-4 py-2 text-gray-800 border rounded-md  border-gray-300 focus:outline-none"
+                                type="text" placeholder="Search items" autocomplete="off"> -->
+                            <button (click)="logOut()"
+                                class="text-start block w-full px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">
+                                Log Out
+                            </button>
+                            <!-- <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">Uppercase</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">Lowercase</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">Camel
+                                Case</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">Kebab
+                                Case</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

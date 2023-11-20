@@ -1,0 +1,24 @@
+<div>
+    <div *ngIf="showSpinner" class="absolute inset-0 flex justify-center items-center z-10">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngFor="let contact of contacts; let i = index" class="py-1 flex items-center justify-center">
+        <div class="max-w-md w-full p-6 py-4 bg-white rounded-lg shadow-lg">
+
+            <div class="flex items-center">
+                <input id="contact" type="checkbox" [value]="contact.contactId" (change)="onCheckChange($event)"
+                    class="h-5 w-5 cursor-pointer rounded-md border border-blue-gray-200 hover:before:opacity-10" />
+                <div class="ml-4">
+                    <div class="text-sm font-medium leading-5 text-gray-900">
+                        {{contact.name}}
+                    </div>
+                    <div *ngIf="contact.email" class="text-sm leading-5 text-gray-500">
+                        {{contact.email}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" (click)="onSubmit()"
+        class="w-32 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mt-4 mb-6">Submit</button>
+</div>
